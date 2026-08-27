@@ -5,11 +5,54 @@
         <meta name="Author" content="Leen ghnaim" > 
         <meta name="description" content="home [page]" >
         <link rel="icon" href="website_logo.png">
+        <link rel="stylesheet" href="../css/home_page.css">
         <title> home page </title> 
     </head>
     <body>
-        <h3> Chosess what u need to access now </h3>
-        <button wdith="250" height="250"> <a href="students.html"> Students </a> </button>
-        <button wdith="250" height="250"> <a href= "Course.html"> Course </a> </button>
+        <div class="nev_bar">
+        <div class="element_nev">
+            <div class="element_nev">
+                <img id="logo" src="../image/T2B.png"/>
+                <h2> Training Platform </h2>
+            </div>
+            <div class="element_nev">
+               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACrklEQVR4nO2YPWgUURCAn8YfEBHECCIqiIWFoEVshCQzGwNeEcHmzVxMJyG1lSlSWNjYpZS0aZSAnQj+XGYuFzVKMBYWQgotRFQEEQX/jbzbvcvlNLnbeHt3K++DB8fte7Pz7c7OvjtjPLXpL9gDKDwNSnfdZ5NGQBhB6TUqL7kByu9wmk6Z1LBkNqDyGCj/CAXohhuRjPtuzM0x7UxmbmgHCF0v3gXhXyB02Sxd3BjJjVbKdRfO7jTtSN9M9igqL65VRiDZTPFYWG6LQY6OrTxO90qlWDEKTZPAPA2B0qfwTtDjnrw9uNrcnjzvB6W5MEn6HKg9V46jf0gUR+ICILDJlc/ySWlyYH5gW611mZuZrSA0UW4EQhP2qd1SnXhTRECG9qHw/dKVBaHh+DFo2K2NEn7QdJFepQCE3kQP7guQ7PH1xnJrXYy/lRImJlLsPnQBlb9HJXHr5J0zu/41LMhgp4uFYaP4kqhIdWtF5Ut2ynY0Kr6LBULnMc+cmEiQyx4B5WdR4Pe9SqdNE8BGirgrhMofo9v+JMjxIdMkQOhnUabiLsWma35kMyqPx22tjQSVr1Q0gXGXU6wA3TN2NwjlogDuwR41LSJQHgHhr6W3fP9sdm9dC0FsNwq9ikrpZa/aE6bFBNO2C5WeR43mbZDP9q29QHkEhb6FrZXzIHaPaRNABjtR6PaKKqneRYPY7SB0rfKl5LYfps2wU7ajah921eVenoDCj6IX3IembdTWCS7vz4q5gvDD8kFQnkXlhSBnD6dFJAhzXVh1m58WEdOwiS0CvUibgV6kTlb7vV1rrPc8pmET/3cRk9D8El6kXrxITNCL1IkXSZsIhP+0F1IvgsoFFJpJ+jxlfGmpF4kFepE68SIxQS+SdhFs82HqECm0OkmsNSp2CB6PSZbfuBVCABOz20UAAAAASUVORK5CYII=" alt="home-page">
+                <h4> Home </h4>
+            </div>
+            <div class="element_nev">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAACwElEQVR4nO2ZvW4UMRDHLVDyCFDCO6RDBzPh4xF25oSoU0FegQ7uCA8QeARKKIGMAaVAOqpEtFDkQEGioz+090W43du11/Z+JP5LLi7r9fznd/bYzikVFRUVFRXlVSB0iJonPhoIjUFokBwnm6orQk/J/9/oqeqKcG7a9HORQJLeYiaoiwigSv/GhREARwCYkzAIfwHNowsLAFda1fGCKjlONkF4iEI/XLeu1QRQ89G8VQJQy1kChAa+9u4zCbwF4c/3Dh9cSdt0GQgf1AXA6iwBQuO08/YHvmFqcJ3hqu/7Hs/qLIEezLcNgNUYGAFwBIARAEcAysO5wMVwnieXfb8yAHA4FzQFIG/fdwEwtj0XNL0E8vb9ygCwQjJNA8h7JxiApKBG2Bg28VS0xl3zqPxiUY1QnmSyxl3zcAGQqRGhl4DJ2b42AJjz3CeAW5pvTpPVfGIToxUA0G970iUAn3wlnn7zafKrBa/VAOpQBKBbDgA8/j6YLqnGAFTt77sIhvIZHIDpOKHHr30JYMMAgteArdHOBmp6ttyuhIfp36wDWvopi2ubR0amHc+a+GeGBkXjlJkye6c47nq/ngGA0OniDrA4m6Pmn6EBlMWtHQBI0lue14VOrQNa+imLazqOc0fUtJedijy0Dmjppyyu6TjOHbdGOxsg/ByFf02bpr26imBRXNNx3DuWaPVbcm2+/PjrWCKfN0IU+tg5AG1TBKAjgEkEoAvyQp9Fy/JuH+h/CHZFFYR/1wSg9AYXuqW5rp8BB3xHBZIrIFeB0N2iGbA/M9DfDWXAaJl52PPXx+/vzmfAfuYhCD2aPaQX6pwKNb+cA3iYeQjLqyV9u/2uf1WdM6U5gabvMwBJL9MheZVcRqGvdRWiBtuRmjy+lEsJhK+jpjeg6U8LjPqt/GlOwq+339+/VsOEi4qKiopSXdBfd1Jr62iyRzwAAAAASUVORK5CYII=" alt="external-courses-online-courses-outline-others-phat-plus-28">
+                <h4> Courses </h4>
+            </div>
+            <div class="element_nev">
+                <img src="data:image/png;base64,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" alt="students">
+                <h4> students </h4>
+            </div>
+            <div class="element_nev">
+                <img src="data:image/png;base64,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" alt="user-male-circle--v2">
+                <h4> Admain </h4>
+            </div> 
+        </div> 
+        <div class="content">
+            <h1> Welcome to T2B </h1>
+            <lable id="text_dd"> Manage your courses and students </lable>
+            <div  class="cards" >
+                <form >
+                    <img src="../image/course.png">
+                    <h2>Course</h2>
+                    <lable id="text_dd"> Chatte, upidate and manage your courses </lable>  
+                    <button  style="background-color: rgb(58, 9, 190);"> <a href= "Course.html"> Course </a> </button>
+                </form>
+                <form >
+                    <img src="../image/students.png">
+                    <h2>students</h2>
+                    <lable id="text_dd">Adit te and mutage your students </lable>      
+                    <button  style="background-color: green;"> <a href="students.html"> Students </a> </button>
+                </form>
+            </div>
+        </div> 
+    </div> 
+        <div class="element_nev">
+        <lable id="footer" >  @ 2024 T2B  All rights reserved </lable>
+        </div>
     </body>
 </html>
