@@ -22,9 +22,9 @@ a {
 form  {
 background: linear-gradient(
     180deg,
-    rgba(229, 245, 255, 0.2) 0%,
-    rgba(242, 248, 252, 0.2) 60%,
-    rgba(255, 255, 255, 0.2) 100%
+    rgba(229, 245, 255, 0.4) 0%,
+    rgba(242, 248, 252, 0.4) 60%,
+    rgba(255, 255, 255, 0.4) 100%
 );
     margin: 150px;
     border : 1px rgb(77, 74, 74) solid;

@@ -4,25 +4,32 @@
         <meta charset="UTF-8">
         <meta name="Author" content="Leen ghniam">
         <meta name="description" content="register page for the T2B">
-        <link rel="icon" href="website_logo.png">
+        <link rel="icon" href="../image/website_logo.png">
+        <link rel="stylesheet"  href="../css/register.css">
         <title> Register </title>
         </head >
         <body>
-            <h1> Register </h1>
-            <form>
-                <label for="name"> Name</label><br>
-                <input type="text" id="name" name="username" required/>
-                <br>
-                <label for="email"> Email</label><br>
-                <input type="email" id="email" name="email" required/>
-                <br>
-                <label for="password"> Password</label><br>
-                <input type="Password" id="Password" name="Password" required/>
-                <br>
-                <label for="confirm_password"> Confirm Password </label><br>
-                <input type="password" id="confirm_password" name="confirm_password" required/>
-                <br>
-                <br>
-                <button type="submit"> <a href="home_page.html"> Register</a> </button>
+            <form id="left">
+                <div id="head_left">
+                <img src="../image/website_logo.png" />
+                <h3> T2B </h3> 
+                </div>
+                <h1> Continuse with T2B </h1>
+                <h3 id="blue"> Your journey, our platform. Let's build the future together.  </h3>
+                <lable> Create your account to access personalized features, track your progress, and stay connected with everything T2B. </lable>
+                <img src="../image/left.png" >
+            </form>
+            <div id="right">
+            <form id="inside">
+                <img src="../image/website_logo.png">
+                <!-- <label for="name"> Name</label><br> -->
+                <input type="text" id="name" name="username" placeholder="♙ Name" required/>
+                <!-- <label for="email"> Email</label><br> -->
+                <input type="email" id="email" name="email" placeholder="✉ Email" required/>
+                <!-- <label for="password"> Password</label><br> -->
+                <input type="Password" id="Password" name="Password" placeholder="⚿ Password" required/>
+                <!-- <label for="confirm_password"> Confirm Password </label><br> -->
+                <input type="password" id="confirm_password" name="confirm_password" placeholder= "⚿ Confirm Password" required/>
+                <button type="submit" id="btn"> <a href="home_page.html"> Register</a> </button>
             </form>
     </html>
