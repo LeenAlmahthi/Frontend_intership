@@ -39,22 +39,34 @@
             <button  id="btn" type="submit"> Login </button> 
             <br>
             <a href="register.html" > Don't have an Account ?</a>
-            <div class="card">JS</div>
-            <div class="card">CSS</div>
-            <div class="card">C++</div>
+            <button class="card">JS</button>
+            <button class="card">CSS</button>
+            <button class="card">C++</button>
         </form>
         </body>
         <script>
             let btn = document.querySelector("#btn");
             btn.innerHTML = "<b>sign in ....</b>";
+            btn,addEventListener("click", (event) => {
+                console.log(event.target);
+            });
+            btn.addEventListener("click", () => {
+                // console.log("Button clicked!");
             btn.classList.toggle("active");
+            });
+
             // btn.style.color = "white";
             // btn.style.backgroundColor = "blue";
 
             // btn.style.backgroundColor =  "rgb(98, 134, 107)";
-            let course = document.querySelectorAll(".card");
-            course.forEach((x,i )=> {
-                x.textContent = `Card ${i+1}`;
+            let card = document.querySelectorAll(".card");
+            // card.forEach((q) => {
+            card.addEventListener("click" , (event) => {
+                event.target.classList.toggle("active");
             });
+            // });
+            // course.forEach((x,i )=> {
+            //     x.textContent = `Card ${i+1}`;
+            // });
             </script>
     </html>
