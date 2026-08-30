@@ -49,11 +49,19 @@ input:not(#remember_me)  {
     display: flex;
     justify-content: space-between;
 }
-button{
+#btn{
     width: 250px;
     height: 30px;
-    border : 1px rgb(77, 74, 74) solid;
+    border : 1px rgb(98, 134, 107) solid;
     border-radius: 2dvh;
+}
+
+.active {
+    width: 250px;
+    height: 30px;
+    background-color: #449c6c;
+    border : 3px rgb(12, 41, 19) solid;
+    border-radius: 5px;
 }
 
 h1 {
