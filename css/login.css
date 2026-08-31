@@ -28,6 +28,7 @@ a {
 form  {
 
      width: 39%;
+     min-width: 350px;
      height: 70%;
      background: linear-gradient(
     180deg,
@@ -72,6 +73,15 @@ input:not(#remember_me)  {
     width: 250px;
     height: 30px;
     background-color: #449c6c;
+    border : 3px rgb(12, 41, 19) solid;
+    border-radius: 5px;
+}
+.test
+{
+    width: 250px;
+    height: 30px;
+    background-color: #15c062;
+    color:rgb(12, 41, 19);
     border : 3px rgb(12, 41, 19) solid;
     border-radius: 5px;
 }
