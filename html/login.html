@@ -23,7 +23,7 @@
             Make a new doc to bring your words, data and teams together. For free
             </label>
             <div>
-            <input type="text" id="username" placeholder=" ✉ Email" name="username" required> 
+            <input type="text" id="username" placeholder=" ✉ Email" name="name" required> 
             <! we match the for with a id to connect the label and input >
             <br>
             </div>
@@ -36,7 +36,7 @@
                Remmber Me </label>
             <a href="#password" > Forget password?</a>
             </div>
-            <button  id="btn" type="submit"> Login </button> 
+            <!-- <button  id="btn" type="submit"> Login </button>  -->
             <br>
             <a href="register.html" > Don't have an Account ?</a>
             <button class="card">JS</button>
@@ -45,28 +45,63 @@
         </form>
         </body>
         <script>
-            let btn = document.querySelector("#btn");
-            btn.innerHTML = "<b>sign in ....</b>";
-            btn,addEventListener("click", (event) => {
-                console.log(event.target);
+            let q = document.querySelector("#username");
+            q.addEventListener("click" , () => {   // this will apply the defualt of the form  ||  login.html?name=omar+88&password=jhj:90 
+                q.classList.toggle("active");
+                console.log("["); 
+                console.log(q.value);
+                console.log("]"); 
             });
-            btn.addEventListener("click", () => {
-                // console.log("Button clicked!");
-            btn.classList.toggle("active");
-            });
+            q.addEventListener("change" , () => { // when u clcik in anther things in the screen u will apply this 
+                console.log("["); 
+                console.log(q.value);
+                console.log("]");
+            })
+               q.addEventListener("input" , () => { // every char u write it in the input will direct print in console 
+                console.log("[");   // [ l
+                console.log(q.value);
+                console.log("]");
+            })
+
+            // let btn = document.querySelector("#btn");
+            // btn.innerHTML = "<b>sign in ....</b>";
+            // btn,addEventListener("click", (event) => {
+            //     console.log(event.target);
+            // });
+            // btn.addEventListener("click", () => {
+            //     // console.log("Button clicked!");
+            // btn.classList.toggle("active");
+            // });
 
             // btn.style.color = "white";
             // btn.style.backgroundColor = "blue";
 
             // btn.style.backgroundColor =  "rgb(98, 134, 107)";
-            let card = document.querySelectorAll(".card");
+            // let card = document.querySelectorAll(".card");
             // card.forEach((q) => {
-            card.addEventListener("click" , (event) => {
-                event.target.classList.toggle("active");
-            });
+            // q.addEventListener("click" , (event) => {
+            //     event.target.classList.toggle("active");
+            // });
             // });
             // course.forEach((x,i )=> {
             //     x.textContent = `Card ${i+1}`;
             // });
             </script>
     </html>
+let q = document.querySelector("#username");
+q.addEventListener("click" , () => {   // this will apply the defualt of the form  ||  login.html?name=omar+88&password=jhj:90 
+    q.classList.toggle("active");
+    console.log("["); 
+    console.log(q.value);
+    console.log("]"); 
+});
+q.addEventListener("change" , () => { // when u clcik in anther things in the screen u will apply this 
+    console.log("["); 
+    console.log(q.value);
+    console.log("]");
+})
+   q.addEventListener("input" , () => { // every char u write it in the input will direct print in console 
+    console.log("[");   // [ l
+    console.log(q.value);
+    console.log("]");
+})
