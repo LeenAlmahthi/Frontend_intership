@@ -58,7 +58,7 @@ body {
     transition: all 0.2s ease;
 }
 
-.item_meddle > img {
+.item_meddle>img {
     width: 100%;
     height: 25px;
     filter: grayscale(100%);
@@ -133,6 +133,7 @@ body {
 
 /* Course Cards */
 .All_cards {
+    position: relative;     
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* grid-template-rows: repeat(1,1); */
@@ -146,10 +147,35 @@ body {
     /* grid-template-rows: repeat(2, 1fr); */
     padding: 5px;
 }
+.delete_btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
 
+    width: 28px;
+    height: 28px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #f4f7ff;
+    color: #2B54C8;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
 .cards .course {
     width: 200px;
     height: 200px;
+    position: relative;
     display: flex;
     align-content: center;
     align-items: center;
@@ -159,23 +185,19 @@ body {
     padding-top: 20px;
 
     background:
-        radial-gradient(
-            circle at 100% 100%,
+        radial-gradient(circle at 100% 100%,
             rgba(149, 155, 215, 0.95) 0%,
             rgba(155, 197, 225, 0.55) 18%,
-            transparent 38%
-        ),
-        linear-gradient(
-            180deg,
+            transparent 38%),
+        linear-gradient(180deg,
             #ffffff 0%,
             #ffffff 65%,
-            #f7fcf8 100%
-        );
+            #f7fcf8 100%);
 
     box-shadow: 0 10px 30px rgba(50, 120, 80, 0.10);
 }
 
-.cards #state {
+.cards .state {
     width: 100px;
     height: 50px;
     /* align-items: center; */
@@ -187,10 +209,10 @@ body {
     gap: 20px;
     margin: 10px;
     padding: 10px;
-    padding-top:15px;
+    padding-top: 15px;
 }
 
-button > a {
+button>a {
     font-size: medium;
     text-decoration: none;
     color: black;
@@ -203,4 +225,115 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.holdFromAdd {
+    position: fixed;
+    /* to full the screen  */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 84, 200, 0.20);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+
+}
+
+
+.AddCourse {
+
+    width: 350px;
+    height: 350px;
+
+    background-color: #ffffff;
+    background-size: cover;
+    background-image: url("../image/background_homepage.png");
+
+    gap: 20px;
+
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+box-shadow: 0 10px 30px rgba(50, 120, 80, 0.10);
+}
+
+.AddCourseInput {
+    width: 250px;
+    height: 45px;
+    padding: 2px;
+    border: #a1a1a1 1px solid;
+    border-radius: 10px;
+
+}
+
+.AddCoursebtn {
+    width: 250px;
+    height: 45px;
+    color: antiquewhite;
+    background-color: #1948ca;
+    border: 1px rgb(0, 0, 0) solid;
+    border-radius: 2dvh;
+}
+#del_btn {
+    width: 350px;
+    height: 220px;
+
+    background-image: url("../image/background_homepage.png");
+    background-size: cover;
+
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 25px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    box-shadow: 0 10px 30px rgba(50, 120, 80, 0.15);
+
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    z-index: 20;
+}
+#side {
+    display:  flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+#side button{
+    width: 100px;
+    height: 50px;
+
+    background-size: cover;
+
+    gap: 20px;
+
+    border: 1px solid rgb(139, 195, 221);;
+    border-radius: 25px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+        box-shadow: 0 10px 30px rgba(50, 120, 80, 0.10);
 }
