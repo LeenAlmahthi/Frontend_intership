@@ -20,6 +20,7 @@ const matrial = [
 // Create cards Course
 function CreateCard(x, i) {
 
+    let contuner = document.querySelector(".All_cards");
     let div_course = document.createElement("div");
     div_course.id = "card" + i;
     div_course.classList.add("cards");
@@ -141,7 +142,6 @@ function BehaverDelete() {
 }
 
 //   Main 
-let contuner = document.querySelector(".All_cards");
     matrial.forEach((x, i) => {
     CreateCard(x, i);
 

@@ -51,17 +51,17 @@
 // const jsonData = JSON.stringify(user);
 
 // console.log(jsonData);
-const _json = {
-    userName: "leenAlmahti",
-    password: "Leen2004@"
-};
-const data = JSON.stringify(_json);
-let response = await fetch("http://localhost:5000/api/authApplication/Login", {
-    method: "POST", 
-    headers: { "Content-Type": "application/json" },
-    body:data
-});
-// let res = await response.json();
-// console.log(res);
-let q = await response.text();
-console.log(q);
+// const _json = {
+//     userName: "leenAlmahti",
+//     password: "Leen2004@"
+// };
+// const data = JSON.stringify(_json);
+// let response = await fetch("http://localhost:5000/api/authApplication/Login", {
+//     method: "POST", 
+//     headers: { "Content-Type": "application/json" },
+//     body:data
+// });
+// // let res = await response.json();
+// // console.log(res);
+// let q = await response.text();
+// console.log(q);
