@@ -75,3 +75,70 @@ $.ajax({
         console.log(error);
     }
 });
+ // const cards = ["JavaSript", "c++", "DataBase"];
+    // cards.forEach((x) => {
+    //   const c = document.createElement("div");
+    //   c.classList.toggle("test");
+    //   c.textContent = x;
+    //   document.body.append(c);
+    // });
+    // const c = document.createElement("div");
+    // c.classList.toggle("test");
+    // c.textContent = cards[0];
+
+    // let test_paresnt = document.querySelector("#remember_me");
+
+    // console.log(test_paresnt.parentElement);
+    // console.log(submit_btn.children);
+
+    // z.addEventListener("click" , (event) => {
+    //     console.log(event.target);
+    //     console.log(event.currentTarget);
+        
+    // });
+
+    // let logo = document.querySelector("#logoLink");
+    // console.log(logo.getAttribute("href"));
+    // logo.setAttribute("href","../image/left.png");
+    // q.addEventListener("click", () => {
+    //   // this will apply the defualt of the form  ||  login.html?name=omar+88&password=jhj:90
+    //   q.classList.toggle("active");
+    //   console.log(q.value);
+    // });
+
+    // q.addEventListener("change" , () => { // when u clcik in anther things in the screen u will apply this
+    //     console.log("[");
+    //     console.log(q.value);
+    //     console.log("]");
+    // })
+    //    q.addEventListener("input" , () => { // every char u write it in the input will direct print in console
+    //     console.log("[");   // [ l
+    //     console.log(q.value);
+    //     console.log("]");
+    // })
+
+    // let btn = document.querySelector("#btn");
+    // btn.innerHTML = "<b>sign in ....</b>";
+    // btn,addEventListener("click", (event) => {
+    //     console.log(event.target);
+    // });
+    // btn.addEventListener("click", () => {
+    //     // console.log("Button clicked!");
+    // btn.classList.toggle("active");
+    // });
+
+    // btn.style.color = "white";
+    // btn.style.backgroundColor = "blue";
+
+    // btn.style.backgroundColor =  "rgb(98, 134, 107)";
+    // let card = document.querySelectorAll(".card");
+    // card.forEach((q) => {
+    // q.addEventListener("click" , (event) => {
+    //     event.target.classList.toggle("active");
+    // });
+    // });
+    // course.forEach((x,i )=> {
+    //     x.textContent = `Card ${i+1}`;
+    // });
+
+

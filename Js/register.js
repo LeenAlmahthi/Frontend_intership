@@ -1,4 +1,4 @@
-function validation(name, email, pass, con_pass) {
+function validation() {
     try {
         // if (!email.includes('@'))   [this check by a form by browser]
         // throw "Email isn't correct";
