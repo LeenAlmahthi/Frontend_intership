@@ -65,3 +65,13 @@
 // // console.log(res);
 // let q = await response.text();
 // console.log(q);
+$.ajax({
+    url: "http://localhost:5000/Course",
+    method: "GET",
+    success: function (data) {
+        console.log(data);
+    },
+    error: function (error) {
+        console.log(error);
+    }
+});
