@@ -1,3 +1,4 @@
+console.log(CouresData);
 console.log("test");
 let selectdelete = -1;
 const matrial = [
@@ -54,12 +55,16 @@ function CreateCard(x, i) {
     course.appendChild(_h2);
 
     let _p = document.createElement("p");
-    _p.textContent = "Price: " + x.Price + "$";
+    _p.textContent = "Price: " + x.price + "$";
     course.appendChild(_p);
+
+     let _time = document.createElement("p");
+    _time.textContent = "Time: " + x.courseTime ;
+    course.appendChild(_time);
 
     let _div = document.createElement("div");
     _div.classList.add("state");
-    _div.textContent = x.StatusCourse;
+    _div.textContent = "Enroll";
     course.appendChild(_div);
 }
 
@@ -103,10 +108,32 @@ function BehaverAddBtn() {
             Price: price_input.value,
             StatusCourse: "Enroll"
         };
-        matrial.push(tmp);
-        CreateCard(tmp, matrial.length - 1);
-        let btn = document.querySelector("#hold_form");
-        btn.style.display = "none";
+         const data_body = {
+            name: name_input.value,
+            Price: price_input.value,
+            StatusCourse: "Enroll",
+            doctorId: "string",
+            courseTime: "string",
+            price: 0
+        };
+         $.ajax({
+            url:"http://localhost:5000/Course",
+            method: "post",
+            contentType : "application/json",
+            data: JSON.stringify(data_body),
+            success:function (response)
+            {
+                CouresData.push(tmp);
+                CreateCard(tmp, CouresData.length - 1);
+                let btn = document.querySelector("#hold_form");
+                btn.style.display = "none";
+            },
+            error: function (error)
+            {
+                console.log("somethings wrongs happens with add course :(", error);
+            }
+        });
+     
     });
 }
 function BehaverDelete() {
@@ -141,11 +168,6 @@ function BehaverDelete() {
     }, 1000);
 }
 
-//   Main 
-    matrial.forEach((x, i) => {
-    CreateCard(x, i);
-
-});
 BehaverAddBtn();
 
 let btn = document.querySelector("#addcourse");
@@ -163,4 +185,8 @@ del.addEventListener("click", (event) => {
 let cancle = document.querySelector("#cancel");
 cancle.addEventListener("click", () => {
     _div.style.display = "none";
+});
+//   Main 
+    CouresData.forEach((x, i) => {
+    CreateCard(x, i);
 });

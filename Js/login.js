@@ -23,7 +23,7 @@ function LoginUser()
         password: $("#password").val()
     };
     data_body = JSON.stringify(data_);
-       console.log("in Login ", data_body);
+    console.log("in Login ", data_body);
     $.ajax({
         url : "http://localhost:5000/api/authApplication/Login",
         method: "POST",
@@ -36,6 +36,8 @@ function LoginUser()
         if (xhr.status === 200) {
             console.log("Login successful");
             console.log("Token:", response);
+            localStorage.setItem("UserName", $("#username").val());
+            console.log("Localstoge:" ,  localStorage.getItem("UserName") );
             window.location.href = "../html/home_page.html";
         }
         else if (xhr.status === 204) {
