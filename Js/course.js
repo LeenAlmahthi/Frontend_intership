@@ -58,8 +58,8 @@ function CreateCard(x, i) {
     _p.textContent = "Price: " + x.price + "$";
     course.appendChild(_p);
 
-     let _time = document.createElement("p");
-    _time.textContent = "Time: " + x.courseTime ;
+    let _time = document.createElement("p");
+    _time.textContent = "Time: " + x.courseTime;
     course.appendChild(_time);
 
     let _div = document.createElement("div");
@@ -101,50 +101,74 @@ function BehaverAddBtn() {
     form_add.append(button_add);
 
     form_add.addEventListener("submit", (event) => {
-        event.preventDefault();
-        console.log("submit button ", name_input.value, price_input.value);
-        const tmp = {
-            name: name_input.value,
-            Price: price_input.value,
-            StatusCourse: "Enroll"
-        };
-         const data_body = {
-            name: name_input.value,
-            Price: price_input.value,
-            StatusCourse: "Enroll",
-            doctorId: "string",
-            courseTime: "string",
-            price: 0
-        };
-         $.ajax({
-            url:"http://localhost:5000/Course",
-            method: "post",
-            contentType : "application/json",
-            data: JSON.stringify(data_body),
-            success:function (response)
-            {
-                CouresData.push(tmp);
-                CreateCard(tmp, CouresData.length - 1);
-                let btn = document.querySelector("#hold_form");
-                btn.style.display = "none";
-            },
-            error: function (error)
-            {
-                console.log("somethings wrongs happens with add course :(", error);
-            }
-        });
-     
+        try {
+            let data_body = {};
+            let tmp = {};
+            event.preventDefault();
+            console.log("submit button ", name_input.value, price_input.value);
+
+            $.ajax({
+                url: "http://localhost:5000/AvaliableCourse",
+                method: "GET",
+                success: function (response) {
+                    console.log("Data Success sending request:");
+
+                    let des_course = response.find(des_course => des_course.name === name_input.value);
+                    if (!des_course) {
+                        console.log("This course does not have a section!");
+                        let btn = document.querySelector("#hold_form");
+                        btn.style.display = "none";
+                        return;
+                    }
+                    data_body = {
+                        name: name_input.value,
+                        Price: des_course.price,
+                        StatusCourse: "Enroll",
+                        doctorId: des_course.doctorId,
+                        courseTime: des_course.courseTime,
+                    };
+                    console.log(" TmpData before sending request:", data_body, tmp);
+
+                    tmp = {
+                        name: name_input.value,
+                        price: des_course.price,
+                        StatusCourse: "Enroll",
+                        courseTime: des_course.courseTime,
+                    };
+                    console.log("Data before sending request:", data_body, tmp);
+                    $.ajax({
+                        url: "http://localhost:5000/Course",
+                        method: "post",
+                        contentType: "application/json",
+                        data: JSON.stringify(data_body),
+                        success: function (response) {
+                            console.log("Data before create a  card ", tmp);
+                            CouresData.push(tmp);
+                            CreateCard(tmp, CouresData.length - 1);
+                            let btn = document.querySelector("#hold_form");
+                            btn.style.display = "none";
+                        },
+                        error: function (error) {
+                            console.log("somethings wrongs happens with add course :(", error);
+                        }
+                    });
+                },
+                error: function (error) {
+                    console.log("Data Error sending request:");
+
+                    console.log("Error: ", error);
+                }
+            });
+        }
+        catch (error) {
+            console.log("Error: ", error);
+        }
     });
 }
 function BehaverDelete() {
     // alert("The course has been deleted successfully"); // how to show a toest message in Js 
-
-    matrial.splice(selectdelete, 1);
-     let _div = document.querySelector("#del_btn");
+    // matrial.splice(selectdelete, 1);
     let cardToDelete = document.getElementById("card" + selectdelete);
-    cardToDelete.remove();
-    _div.style.display = "none";
-
     let _form = document.createElement("div");
     _form.classList.add("del_message");
 
@@ -162,10 +186,46 @@ function BehaverDelete() {
     _form.appendChild(_h2);
     _form.appendChild(_p);
     document.body.append(_form);
-    // setTimeout(functionToRun, time); 
-    setTimeout(() => {
-        _form.remove();
-    }, 1000);
+
+    let name_course = CouresData[selectdelete].name;
+
+    $.ajax({
+        url: "http://localhost:5000/Course",
+        method: "GET",
+        success: function (response) 
+        {
+            console.log("Data Success sending request:");
+            let des_course = response.find(des_course => des_course.name === name_course);
+            if (!des_course) {
+                console.log("This course does not have a section!");
+                // let btn = document.querySelector("#hold_form");
+                // btn.style.display = "none";
+                return;
+            }
+            const del_url ="http://localhost:5000/Course?id=" + des_course.id ; 
+            $.ajax({
+                url: del_url,
+                method: "Delete",
+                success: function (response) {
+                    let _div = document.querySelector("#del_btn");
+                    cardToDelete.remove();
+                    _div.style.display = "none";
+                    setTimeout(() => {
+                        _form.remove();
+                    }, 1000);
+                },
+                error: function (error) {
+                    console.log("somethings wrongs happens with add course :(", error);
+                    let _div = document.querySelector("#del_btn");
+                    _div.style.display = "none";
+                }
+            })
+        },
+        error:function(error)
+        {
+            console.log("somethings wrongs happens with add course :(", error);
+        }
+    });
 }
 
 BehaverAddBtn();
@@ -184,9 +244,10 @@ del.addEventListener("click", (event) => {
 
 let cancle = document.querySelector("#cancel");
 cancle.addEventListener("click", () => {
+    let _div = document.querySelector("#del_btn");
     _div.style.display = "none";
 });
 //   Main 
-    CouresData.forEach((x, i) => {
+CouresData.forEach((x, i) => {
     CreateCard(x, i);
 });
