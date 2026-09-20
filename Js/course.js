@@ -1,5 +1,8 @@
 console.log(CouresData);
 console.log("test");
+CouresData.forEach((x, i) => {
+    CreateCard(x, i);
+});
 let selectdelete = -1;
 const matrial = [
     {
@@ -248,6 +251,3 @@ cancle.addEventListener("click", () => {
     _div.style.display = "none";
 });
 //   Main 
-CouresData.forEach((x, i) => {
-    CreateCard(x, i);
-});

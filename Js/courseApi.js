@@ -20,6 +20,7 @@ $.ajax({
             }
 
             CouresData.push(tmp); 
+                CreateCard(tmp, i);
         });
     },
     error:function(error)

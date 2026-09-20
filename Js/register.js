@@ -76,6 +76,9 @@ try {
         validation();
         CallApi();
         LoginUser();
+       localStorage.setItem("UserName", $("#name").val());
+            console.log(localStorage.length, "Name: ",localStorage.getItem("UserName") );
+        window.location.href = "home_page.html";
     })
 }
 catch (error) {
